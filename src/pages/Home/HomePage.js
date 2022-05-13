@@ -1,8 +1,10 @@
+import Home from "../../components/Home/Home";
+
 const HomePage = () => {
   return (
     <main className="home">
       <div className="container">
-        hello
+        <Home />
       </div>
     </main>
   );

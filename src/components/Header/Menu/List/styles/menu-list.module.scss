@@ -1,23 +1,24 @@
-$color: #282828;
+@import "./../../../../../styles/constants.scss";
 
 @mixin item() {
-  color: $color;
+  color: $dark-font;
   font-size: 1.28rem;
-  font-weight: 600;
+  font-weight: 800;
 }
 
-.menu__list {
+.list {
   display: flex;
-}
-
-.menu__item {
-  margin: 0 30px 0 0;
-}
-
-.menu__item:last-child {
-  margin: 0;
-}
-
-.menu__link {
-  @include item();
+  &__item {
+    margin: 0 30px 0 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  &__link {
+    @include item();
+    transition: $duration;
+    &:hover {
+      color: $white-font;
+    }
+  }
 }

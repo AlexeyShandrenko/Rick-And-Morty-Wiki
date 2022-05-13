@@ -1,15 +1,18 @@
-$footer-background-color: #282828;
-$footer-border: #77dde7;
+@import "./../../../styles/constants.scss";
 
 .footer {
-  background-color: $footer-background-color;
+  background-color: $gray-background;
   padding: 50px 0;
-  color: #fff;
+  color: $white-font;
   text-align: center;
   font-weight: 500;
-}
-
-.footer__link {
-  color: #fff;
-  border-bottom: 1px solid $footer-border;
+  &__link {
+    color: $white-font;
+    border-bottom: 1px solid $blue-border-bottom;
+    transition: 0.2s;
+    &:hover {
+      color: $blue-font;
+      border: 0;
+    }
+  }
 }

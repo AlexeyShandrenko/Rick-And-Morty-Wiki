@@ -1,8 +1,7 @@
 .logo {
-    width: 4.28rem;
-    height: 4.28rem;
-}
-
-.logo__img {
+  width: 4.28rem;
+  height: 4.28rem;
+  &__img {
     max-width: 100%;
+  }
 }

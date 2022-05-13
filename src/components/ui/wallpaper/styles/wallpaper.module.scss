@@ -1,0 +1,27 @@
+@import "./../../../../styles/constants.scss";
+
+.wallpaper {
+  position: relative;
+  padding-top: 41.8%;
+  background-color: $gray-background;
+  &__text {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: $white-font;
+    font-size: 9.14rem;
+    width: 100%;
+    text-align: center;
+  }
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
+  }
+}
