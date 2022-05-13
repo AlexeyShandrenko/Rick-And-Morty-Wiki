@@ -1,0 +1,11 @@
+@import "./../../../styles/constants.scss";
+
+.characters {
+  margin: 100px 0 0 0;
+  &__title {
+    color: $dark-font;
+    font-size: 3.14rem;
+    font-weight: 900;
+    margin: 0 0 50px 0;
+  }
+}

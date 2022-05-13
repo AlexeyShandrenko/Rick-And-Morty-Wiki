@@ -6,10 +6,14 @@ const MenuList = () => {
   return (
     <ul className={styles.list}>
       <li className={styles.list__item}>
-        <Link to="/" className={styles.list__link}>Home</Link>
+        <Link to="/" className={styles.list__link}>
+          Home
+        </Link>
       </li>
       <li className={styles.list__item}>
-        <a href="#" className={styles.list__link}>Characters</a>
+        <Link to="/characters" className={styles.list__link}>
+          Characters
+        </Link>
       </li>
     </ul>
   );
