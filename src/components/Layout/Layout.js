@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <div className="wrapper">
       <Header />
-      <Wallpaper />
+      {/* <Wallpaper /> */}
       <Outlet />
       <Footer />
     </div>

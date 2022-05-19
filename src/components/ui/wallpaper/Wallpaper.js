@@ -1,6 +1,6 @@
 import styles from "./styles/wallpaper.module.scss";
 
-const Wallpaper = () => {
+const Wallpaper = ({ title }) => {
   return (
     <div className={styles.wallpaper}>
       <img
@@ -8,7 +8,7 @@ const Wallpaper = () => {
         src="./images/wallpaper.jpg"
         alt=""
       />
-      <p className={styles.wallpaper__text}>Rick and Morty Wiki</p>
+      <p className={styles.wallpaper__text}>{title}</p>
     </div>
   );
 };

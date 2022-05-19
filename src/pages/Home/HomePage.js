@@ -1,12 +1,16 @@
 import Home from "../../components/Home/Home";
+import Wallpaper from "../../components/ui/wallpaper/Wallpaper";
 
-const HomePage = () => {
+const HomePage = ({title}) => {
   return (
-    <main>
-      <div className="container">
-        <Home />
-      </div>
-    </main>
+    <>
+      <Wallpaper title={title} />
+      <main>
+        <div className="container">
+          <Home />
+        </div>
+      </main>
+    </>
   );
 };
 
