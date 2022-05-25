@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import useGetCharactersByPageId from "../../hooks/useGetCharactersByPageId";
+import useGetCharactersByPageId from "../../hooks/characters/useGetCharactersByPageId";
 
 import CharactersList from "./List/CharactersList";
 import Loading from "../ui/loading/Loading";
@@ -14,6 +14,7 @@ const Characters = ({
   pagesCount,
   next,
 }) => {
+  const pages = pagesCount + 1;
   const { results: defaultResults = [] } = charactersData?.characters;
   const [results, setResults] = useState(defaultResults);
   const [pageNumber, setPageNumber] = useState(next);
@@ -28,7 +29,7 @@ const Characters = ({
         return [...prev, ...newCharacters];
       });
       setPageNumber((prev) => {
-        return prev === pagesCount + 1 ? prev : prev + 1;
+        return prev === pages ? prev : prev + 1;
       });
     }
   };
@@ -37,7 +38,7 @@ const Characters = ({
     <section className={styles.characters}>
       <h1 className={styles.characters__title}>Characters</h1>
       {charactersLoading ? <Loading /> : <CharactersList data={results} />}
-      {charactersData && pageNumber !== pagesCount && (
+      {charactersData && pageNumber !== pages && (
         <Button onClick={loadMore} name="Load more" />
       )}
     </section>

@@ -1,15 +1,20 @@
+import { Link } from "react-router-dom";
+
 import styles from "./styles/character-card.module.scss";
 
-const CharacterCard = ({ name, image, species, locationName, originName }) => {
+const CharacterCard = ({
+  id,
+  name,
+  image,
+  species,
+  locationName,
+  originName,
+}) => {
   return (
     <li className={styles.card}>
-      <a className="card__link">
+      <Link to={`/${id}`} className="card__link">
         <div className={styles.card__img}>
-          <img
-            className={styles.img}
-            alt=""
-            src={image}
-          />
+          <img className={styles.img} alt="" src={image} />
         </div>
         <div className={styles.info}>
           <h1 className={styles.info__title}>{name}</h1>
@@ -28,7 +33,7 @@ const CharacterCard = ({ name, image, species, locationName, originName }) => {
             {locationName}
           </p>
         </div>
-      </a>
+      </Link>
     </li>
   );
 };

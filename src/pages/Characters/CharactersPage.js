@@ -2,7 +2,7 @@ import Characters from "../../components/Characters/Characters";
 import Loading from "../../components/ui/loading/Loading";
 import Wallpaper from "../../components/ui/wallpaper/Wallpaper";
 
-import useGetCharacters from "../../hooks/useGetCharacters";
+import useGetCharacters from "../../hooks/characters/useGetCharacters";
 
 const CharactersPage = ({ title }) => {
   const { data, loading } = useGetCharacters() || [];

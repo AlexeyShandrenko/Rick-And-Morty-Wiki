@@ -15,6 +15,16 @@ const MenuList = () => {
           Characters
         </Link>
       </li>
+      <li className={styles.list__item}>
+        <Link to="/episodes" className={styles.list__link}>
+          Episodes
+        </Link>
+      </li>
+      <li className={styles.list__item}>
+        <Link to="/locations" className={styles.list__link}>
+          Locations
+        </Link>
+      </li>
     </ul>
   );
 };
