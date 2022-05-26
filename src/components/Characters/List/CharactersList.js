@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import CharacterCard from "./Item/CharacterCard";
 
 import styles from "./styles/characters-list.module.scss";

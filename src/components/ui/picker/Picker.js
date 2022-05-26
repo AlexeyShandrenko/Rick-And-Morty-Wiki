@@ -1,3 +1,7 @@
+import styles from "./styles/picker.module.scss";
+
+import { SEARCH_TITLE } from "../../../config/constants/constants";
+
 const Picker = ({ count, name, select }) => {
   const createList = (count) => {
     let result = [];
@@ -8,10 +12,10 @@ const Picker = ({ count, name, select }) => {
   };
 
   return (
-    <form>
+    <div className={styles.select}>
       <select onChange={select}>
         <option selected disabled>
-          Choose...
+          {SEARCH_TITLE}
         </option>
         {createList(count).map((value) => {
           return (
@@ -21,7 +25,7 @@ const Picker = ({ count, name, select }) => {
           );
         })}
       </select>
-    </form>
+    </div>
   );
 };
 

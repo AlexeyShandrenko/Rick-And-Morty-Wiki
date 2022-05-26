@@ -7,6 +7,8 @@ import Loading from "../ui/loading/Loading";
 import Button from "../ui/button/Button";
 
 import styles from "./styles/characters.module.scss";
+import Search from "../ui/search/Search";
+import useGetCharactersByFilterName from "../../hooks/characters/useGetCharactersByFilterName";
 
 const Characters = ({
   charactersData,
@@ -18,8 +20,12 @@ const Characters = ({
   const { results: defaultResults = [] } = charactersData?.characters;
   const [results, setResults] = useState(defaultResults);
   const [pageNumber, setPageNumber] = useState(next);
+  const [searchText, setSearchText] = useState("");
+  const [searchResults, setSearchResults] = useState(null);
 
   const [getNewCharacters, { data }] = useGetCharactersByPageId(pageNumber);
+  const [getCharactersByFilterName, { data: searchCharacters }] =
+    useGetCharactersByFilterName(searchText);
 
   const loadMore = () => {
     getNewCharacters();
@@ -34,11 +40,34 @@ const Characters = ({
     }
   };
 
+  const changeSearchText = (value) => {
+    setSearchText(value);
+    if (value === "") {
+      setSearchResults(null);
+    }
+  };
+
+  const submitSearchField = (event) => {
+    event.preventDefault();
+    getCharactersByFilterName();
+    setSearchResults(searchCharacters.characters.results);
+  };
+
   return (
     <section className={styles.characters}>
       <h1 className={styles.characters__title}>Characters</h1>
-      {charactersLoading ? <Loading /> : <CharactersList data={results} />}
-      {charactersData && pageNumber !== pages && (
+      <Search
+        changeSearchText={changeSearchText}
+        submitSearchField={submitSearchField}
+      />
+      {searchResults ? (
+        <CharactersList data={searchResults} />
+      ) : charactersLoading ? (
+        <Loading />
+      ) : (
+        <CharactersList data={results} />
+      )}
+      {charactersData && pageNumber !== pages && !searchResults && (
         <Button onClick={loadMore} name="Load more" />
       )}
     </section>

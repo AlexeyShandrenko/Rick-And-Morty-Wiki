@@ -1,3 +1,33 @@
+@import "./../../../styles/constants.scss";
+
 .episodes {
-    margin: 100px 0 10px 0;
+  margin: 100px 0 10px 0;
+  &__title {
+    color: $blue-font;
+    font-size: 2.28rem;
+    line-height: 1.57rem;
+    margin: 0 0 8px 0;
+    text-align: center;
+    font-weight: 700;
+    margin: 0 0 40px 0;
+    span {
+      color: $dark-font;
+      font-size: 3.14rem;
+      font-weight: 900;
+    }
   }
+  &__subtitle {
+    color: $blue-font;
+    font-size: 18px;
+    line-height: 1.57rem;
+    margin: 0 0 8px 0;
+    text-align: center;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    span {
+      color: $dark-font;
+      font-size: 22px;
+      font-weight: 900;
+    }
+  }
+}

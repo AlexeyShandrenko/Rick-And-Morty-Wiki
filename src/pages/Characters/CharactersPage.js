@@ -5,7 +5,7 @@ import Wallpaper from "../../components/ui/wallpaper/Wallpaper";
 import useGetCharacters from "../../hooks/characters/useGetCharacters";
 
 const CharactersPage = ({ title }) => {
-  const { data, loading } = useGetCharacters() || [];
+  const { data, loading } = useGetCharacters();
 
   return (
     <>

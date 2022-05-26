@@ -5,7 +5,7 @@ import Wallpaper from "../../components/ui/wallpaper/Wallpaper";
 import Loading from "../../components/ui/loading/Loading";
 
 const LocationsPage = ({ title }) => {
-  const { data, loading } = useGetLocationCount() || [];
+  const { data, loading } = useGetLocationCount();
   return (
     <>
       <Wallpaper title={title} />

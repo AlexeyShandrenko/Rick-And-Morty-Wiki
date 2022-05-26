@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
 
+import {
+  HEADER_HOME,
+  HEADER_CHARACTERS,
+  HEADER_EPISODES,
+  HEADER_LOCATIONS,
+} from "../../../../config/constants/constants";
+
 import styles from "./styles/menu-list.module.scss";
 
 const MenuList = () => {
@@ -7,22 +14,22 @@ const MenuList = () => {
     <ul className={styles.list}>
       <li className={styles.list__item}>
         <Link to="/" className={styles.list__link}>
-          Home
+          {HEADER_HOME}
         </Link>
       </li>
       <li className={styles.list__item}>
         <Link to="/characters" className={styles.list__link}>
-          Characters
+          {HEADER_CHARACTERS}
         </Link>
       </li>
       <li className={styles.list__item}>
         <Link to="/episodes" className={styles.list__link}>
-          Episodes
+          {HEADER_EPISODES}
         </Link>
       </li>
       <li className={styles.list__item}>
         <Link to="/locations" className={styles.list__link}>
-          Locations
+          {HEADER_LOCATIONS}
         </Link>
       </li>
     </ul>

@@ -1,6 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import styles from "./styles/episodes.module.scss";
+
+import {
+  EPISODE_NAME,
+  EPISODE_AIR_DATE,
+} from "../../config/constants/constants";
 
 import useGetEpisodeById from "../../hooks/episodes/useGetEpisodeById";
 
@@ -8,7 +13,11 @@ import CharactersList from "../Characters/List/CharactersList";
 import Picker from "../ui/picker/Picker";
 
 const Episodes = ({ count }) => {
-  const [episodeId, setEpisodeId] = useState(null);
+  const [episodeId, setEpisodeId] = useState(1);
+
+  useEffect(() => {
+    getEpisodeById();
+  }, []);
 
   const selectEpisode = (event) => {
     const { value } = event.target;
@@ -19,12 +28,12 @@ const Episodes = ({ count }) => {
 
   return (
     <section className={styles.episodes}>
-      <h1 className="episodes__title">
-        <span>Episode name: </span>
+      <h1 className={styles.episodes__title}>
+        <span>{EPISODE_NAME}</span>
         {data && data.episode.name}
       </h1>
-      <h2 className="episodes__title">
-        <span>Air date: </span>
+      <h2 className={styles.episodes__subtitle}>
+        <span>{EPISODE_AIR_DATE}</span>
         {data && data.episode.air_date}
       </h2>
       <Picker count={count} name="Episode" select={selectEpisode} />

@@ -1,33 +1,47 @@
+import { Link } from "react-router-dom";
+
+import styles from "./styles/character-info.module.scss";
+
 const CharacterInformation = ({ character }) => {
+  const getEpisodes = () => {
+    const { episode } = character;
+    let result = "";
+    episode.map((ep) => {
+      result += `${ep.name} (${ep.episode}), `;
+    });
+    return result;
+  };
+
   return (
     <div className="character__information">
-      <div className="character__img">
+      <div className={styles.character__img}>
         <img src={character.image} alt="" />
       </div>
-      <p className="character__name">
-        {character.name} - {character.species}
-      </p>
-      <ul className="character__list">
-        <li className="character__item">
-          <span className="character__highlight">Gender: </span>
+      <p className={styles.character__name}>{character.name}</p>
+      <ul className={styles.list}>
+        <li className={styles.list__item}>
+          <span className="list__highlight">Gender: </span>
           {character.gender}
         </li>
         {character.type && (
-          <li className="character__item">
-            <span className="character__highlight">Type: </span>
+          <li className={styles.list__item}>
+            <span>Type: </span>
             {character.type}
           </li>
         )}
-        <li className="character__item">
-          <span className="character__highlight">First seen in: </span>
-          {character.origin.name}
+        <li className={styles.list__item}>
+          <span>First seen in: </span>
+          <Link to="/locations">{character.origin.name}</Link>
         </li>
-        <li className="character__item">
-          <span className="character__highlight">Last known location: </span>
-          {character.location.name}
+        <li className={styles.list__item}>
+          <span>Last known location: </span>
+          <Link to="/locations">{character.location.name}</Link>
+        </li>
+        <li className={styles.list__item}>
+          <span>Episodes: </span>
+          <Link to="/episodes">{getEpisodes()}</Link>
         </li>
       </ul>
-      
     </div>
   );
 };
