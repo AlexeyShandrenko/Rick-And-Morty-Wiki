@@ -21,11 +21,12 @@ const Characters = ({
   const [results, setResults] = useState(defaultResults);
   const [pageNumber, setPageNumber] = useState(next);
   const [searchText, setSearchText] = useState("");
+  const [searchPage, setSearchPage] = useState(1);
   const [searchResults, setSearchResults] = useState(null);
 
   const [getNewCharacters, { data }] = useGetCharactersByPageId(pageNumber);
   const [getCharactersByFilterName, { data: searchCharacters }] =
-    useGetCharactersByFilterName(searchText);
+    useGetCharactersByFilterName(searchText, searchPage);
 
   const loadMore = () => {
     getNewCharacters();
@@ -40,10 +41,26 @@ const Characters = ({
     }
   };
 
+  const loadSearchMore = () => {
+    setSearchPage((prev) => {
+      return searchCharacters?.characters?.info?.next !== null
+        ? prev + 1
+        : prev;
+    });
+    getCharactersByFilterName();
+    if (searchCharacters) {
+      const newCharacters = searchCharacters?.characters?.results;
+      setSearchResults((prev) => {
+        return [...prev, ...newCharacters];
+      });
+    }
+  };
+
   const changeSearchText = (value) => {
     setSearchText(value);
     if (value === "") {
       setSearchResults(null);
+      setSearchPage(1);
     }
   };
 
@@ -51,6 +68,11 @@ const Characters = ({
     event.preventDefault();
     getCharactersByFilterName();
     setSearchResults(searchCharacters.characters.results);
+    setSearchPage((prev) => {
+      return searchCharacters?.characters?.info?.next !== null
+        ? prev + 1
+        : prev;
+    });
   };
 
   return (
@@ -61,7 +83,13 @@ const Characters = ({
         submitSearchField={submitSearchField}
       />
       {searchResults ? (
-        <CharactersList data={searchResults} />
+        <div>
+          <CharactersList data={searchResults} />
+          {searchCharacters?.characters?.info?.count !==
+            searchResults.length && (
+            <Button onClick={loadSearchMore} name="Load more" />
+          )}
+        </div>
       ) : charactersLoading ? (
         <Loading />
       ) : (

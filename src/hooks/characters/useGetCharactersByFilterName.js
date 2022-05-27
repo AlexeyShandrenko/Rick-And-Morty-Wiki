@@ -1,8 +1,12 @@
 import { useLazyQuery, gql } from "@apollo/client";
 
 const GET_CHARACTERS_BY_FILTER_NAME = gql`
-  query getCharactersByFilterName($name: String!) {
-    characters(filter: { name: $name }) {
+  query getCharactersByFilterName($name: String!, $page: Int!) {
+    characters(filter: { name: $name }, page: $page) {
+      info {
+        count
+        next
+      }
       results {
         id
         name
@@ -19,12 +23,13 @@ const GET_CHARACTERS_BY_FILTER_NAME = gql`
   }
 `;
 
-const useGetCharactersByFilterName = (name) => {
+const useGetCharactersByFilterName = (name, page) => {
   const [getCharactersByFilterName, { data, loading, error }] = useLazyQuery(
     GET_CHARACTERS_BY_FILTER_NAME,
     {
       variables: {
         name,
+        page
       },
     }
   );

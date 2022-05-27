@@ -12,6 +12,7 @@ import useGetLocationById from "../../hooks/locations/useGetLocationById";
 
 import CharactersList from "../Characters/List/CharactersList";
 import Picker from "../ui/picker/Picker";
+import NotFound from "../ui/notFound/NotFound";
 
 const Locations = ({ count }) => {
   const [locationId, setLocationId] = useState(1);
@@ -27,7 +28,6 @@ const Locations = ({ count }) => {
   };
 
   const [getLocationById, { data }] = useGetLocationById(locationId);
-  console.log(data);
 
   return (
     <section className={styles.locations}>
@@ -44,7 +44,11 @@ const Locations = ({ count }) => {
         {data && data.location.type}
       </h3>
       <Picker count={count} name="Location" select={selectLocation} />
-      {data && <CharactersList data={data.location.residents} />}
+      {data && data.location.residents.length !== 0 ? (
+        <CharactersList data={data.location.residents} />
+      ) : (
+        <NotFound />
+      )}
     </section>
   );
 };
