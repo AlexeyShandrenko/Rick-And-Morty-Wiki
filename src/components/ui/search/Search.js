@@ -1,10 +1,20 @@
+import { useState } from "react";
+
 import styles from "./styles/search.module.scss";
 
 import { SEARCH_TEXT } from "../../../config/constants/constants";
+import searchSchema from "./../../../validations/search/SeacrhValidation";
 
 const Search = ({ changeSearchText, submitSearchField }) => {
-  const changeSearchField = (event) => {
+  const [isValid, setIsValid] = useState(false);
+
+  const changeSearchField = async (event) => {
     const { value } = event.target;
+    let formData = {
+      search: value,
+    };
+    const isValid = await searchSchema.isValid(formData);
+    setIsValid(isValid);
     changeSearchText(value);
   };
 
@@ -16,7 +26,7 @@ const Search = ({ changeSearchText, submitSearchField }) => {
         placeholder="Search..."
         onChange={changeSearchField}
       />
-      <button>{SEARCH_TEXT}</button>
+      <button disabled={!isValid}>{SEARCH_TEXT}</button>
     </form>
   );
 };

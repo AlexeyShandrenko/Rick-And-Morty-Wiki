@@ -16,6 +16,17 @@ const CharacterInformation = ({ character }) => {
     <div className="character__information">
       <div className={styles.character__img}>
         <img src={character.image} alt="" />
+        <p
+          className={
+            character.status === "Alive"
+              ? `${styles.character__status_alive}`
+              : character.status === "Dead"
+              ? `${styles.character__status_dead}`
+              : `${styles.character__status_unknown}`
+          }
+        >
+          {character.status}
+        </p>
       </div>
       <p className={styles.character__name}>{character.name}</p>
       <ul className={styles.list}>

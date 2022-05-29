@@ -4,9 +4,52 @@
   width: 305px;
   border-radius: 5px;
   cursor: pointer;
+  &__status_alive {
+    color: $white-font;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    margin: 15px;
+    padding: 10px 5px;
+    min-width: 100px;
+    border-radius: 5px;
+    font-weight: 800;
+    font-size: 16px;
+    background-color: $green-font;
+  }
+  &__status_dead {
+    color: $white-font;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    margin: 15px;
+    padding: 10px 5px;
+    min-width: 100px;
+    border-radius: 5px;
+    font-weight: 800;
+    font-size: 16px;
+    background-color: $red-font;
+  }
+  &__status_unknown {
+    color: $white-font;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    margin: 15px;
+    padding: 10px 5px;
+    min-width: 100px;
+    border-radius: 5px;
+    font-weight: 800;
+    font-size: 16px;
+    background-color: $unknown-font;
+  }
   &__img {
     margin: 0 0 20px 0;
     text-align: center;
+    position: relative;
     .img {
       border-radius: 5px;
     }

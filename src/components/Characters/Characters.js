@@ -1,14 +1,15 @@
 import { useState } from "react";
 
+import styles from "./styles/characters.module.scss";
+
 import useGetCharactersByPageId from "../../hooks/characters/useGetCharactersByPageId";
+import useGetCharactersByFilterName from "../../hooks/characters/useGetCharactersByFilterName";
 
 import CharactersList from "./List/CharactersList";
 import Loading from "../ui/loading/Loading";
 import Button from "../ui/button/Button";
-
-import styles from "./styles/characters.module.scss";
 import Search from "../ui/search/Search";
-import useGetCharactersByFilterName from "../../hooks/characters/useGetCharactersByFilterName";
+import Filter from "../ui/filter/Filter";
 
 const Characters = ({
   charactersData,
@@ -82,6 +83,7 @@ const Characters = ({
         changeSearchText={changeSearchText}
         submitSearchField={submitSearchField}
       />
+      {/* <Filter /> */}
       {searchResults ? (
         <div>
           <CharactersList data={searchResults} />

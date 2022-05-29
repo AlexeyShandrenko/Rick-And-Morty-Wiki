@@ -9,6 +9,7 @@ const GET_CHARACTER_BY_ID = gql`
       species
       type
       gender
+      status
       origin {
         name
       }

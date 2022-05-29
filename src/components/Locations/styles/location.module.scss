@@ -5,15 +5,21 @@
   &__title {
     color: $blue-font;
     font-size: 2.28rem;
-    line-height: 1.57rem;
+    line-height: 1.9rem;
     margin: 0 0 8px 0;
     text-align: center;
     font-weight: 700;
     margin: 0 0 40px 0;
+    @media (max-width: 768px) {
+      font-size: 1.76rem;
+    }
     span {
       color: $dark-font;
       font-size: 3.14rem;
       font-weight: 900;
+      @media (max-width: 768px) {
+        font-size: 1.9rem;
+      }
     }
   }
   &__subtitle {

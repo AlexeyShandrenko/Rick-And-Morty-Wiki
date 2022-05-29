@@ -10,6 +10,7 @@ const GET_EPISODE_BY_ID = gql`
         id
         name
         species
+        status
         image
         origin {
           name

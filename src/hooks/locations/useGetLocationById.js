@@ -11,6 +11,7 @@ const GET_LOCATION_BY_ID = gql`
         id
         name
         species
+        status
         image
         origin {
           name

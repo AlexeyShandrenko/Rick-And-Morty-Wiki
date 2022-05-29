@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   input {
-    width: 20%;
+    min-width: 14.28rem;
     border: 2px solid $blue-font;
     border-right: 0;
     border-radius: 5px 0 0 5px;
@@ -18,7 +18,7 @@
     border-left: 0;
     border-radius: 0 5px 5px 0;
     &:disabled {
-      background-color: #a3e9f0;
+      background-color: #d7e6e8;
     }
   }
 }

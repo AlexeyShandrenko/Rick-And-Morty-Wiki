@@ -7,6 +7,7 @@ const CharacterCard = ({
   name,
   image,
   species,
+  status,
   locationName,
   originName,
 }) => {
@@ -15,6 +16,17 @@ const CharacterCard = ({
       <Link to={`/${id}`} className="card__link">
         <div className={styles.card__img}>
           <img className={styles.img} alt="" src={image} />
+          <p
+            className={
+              status === "Alive"
+                ? `${styles.card__status_alive}`
+                : status === "Dead"
+                ? `${styles.card__status_dead}`
+                : `${styles.card__status_unknown}`
+            }
+          >
+            {status}
+          </p>
         </div>
         <div className={styles.info}>
           <h1 className={styles.info__title}>{name}</h1>

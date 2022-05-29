@@ -1,3 +1,5 @@
+export const SEARCH_VALIDATION_TEXT = "Must be text!";
+
 export const HOME_PAGE_TITLE = "Rick and Morty Wiki";
 export const CHARACTERS_PAGE_TITLE = "Characters";
 export const LOCATIONS_PAGE_TITLE = "Locations";

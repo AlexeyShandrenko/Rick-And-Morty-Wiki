@@ -14,6 +14,7 @@ const CharactersList = ({ data }) => {
             name={character.name}
             image={character.image}
             species={character.species}
+            status={character.status}
             locationName={character.location.name}
             originName={character.origin.name}
           />

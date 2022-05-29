@@ -12,6 +12,7 @@ const GET_CHARACTERS_BY_FILTER_NAME = gql`
         name
         image
         species
+        status
         origin {
           name
         }

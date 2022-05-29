@@ -2,6 +2,55 @@
 
 .character__img {
   margin: 0 0 20px 0;
+  position: relative;
+}
+
+.character__status_alive {
+  color: $white-font;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  text-align: center;
+  margin: 15px;
+  padding: 10px 5px;
+  min-width: 100px;
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 16px;
+  background-color: #7cfc00;
+}
+
+.character__status_dead {
+  color: $white-font;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  text-align: center;
+  margin: 15px;
+  padding: 10px 5px;
+  min-width: 100px;
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 16px;
+  background-color: #dc143c;
+}
+
+.character__status_unknown {
+  color: $white-font;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  text-align: center;
+  margin: 15px;
+  padding: 10px 5px;
+  min-width: 100px;
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 16px;
+  background-color: #a9a9a9;
 }
 
 .image {

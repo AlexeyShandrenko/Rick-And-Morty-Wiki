@@ -8,6 +8,7 @@ const GET_CHARACTERS_BY_PAGE_ID = gql`
         name
         image
         species
+        status
         origin {
           name
         }

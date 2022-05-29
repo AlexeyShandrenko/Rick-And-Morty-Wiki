@@ -15,6 +15,18 @@
     font-size: 9.14rem;
     width: 100%;
     text-align: center;
+    @media (max-width: 1200px) {
+      font-size: 7.14rem;
+    }
+    @media (max-width: 992px) {
+      font-size: 5.14rem;
+    }
+    @media (max-width: 768px) {
+      font-size: 3.14rem;
+    }
+    @media (max-width: 415px) {
+      font-size: 2.14rem;
+    }
   }
   &__image {
     position: absolute;
