@@ -3,7 +3,6 @@ import CharacterCard from "./Item/CharacterCard";
 import styles from "./styles/characters-list.module.scss";
 
 const CharactersList = ({ data }) => {
-
   return (
     <ul className={styles.list}>
       {data.map((character) => {

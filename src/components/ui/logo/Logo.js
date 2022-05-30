@@ -9,8 +9,12 @@ const Logo = () => {
         <img
           className={styles.logo__img}
           src="./images/icons/logo.png"
-          onMouseOver={(e) => (e.currentTarget.src = "./images/icons/logo-active.png")}
-          onMouseLeave={(e) => (e.currentTarget.src = "./images/icons/logo.png")}
+          onMouseOver={(e) =>
+            (e.currentTarget.src = "./images/icons/logo-active.png")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.src = "./images/icons/logo.png")
+          }
           alt=""
         />
       </Link>

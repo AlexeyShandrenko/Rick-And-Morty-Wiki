@@ -13,7 +13,11 @@ const Character = () => {
 
   return (
     <section className={styles.character}>
-      {loading ? <Loading /> : <CharacterInformation character={data.character} />}
+      {loading ? (
+        <Loading />
+      ) : (
+        <CharacterInformation character={data.character} />
+      )}
     </section>
   );
 };

@@ -19,7 +19,7 @@ export const LOCATION_DIMENSION = "Dimension: ";
 export const LOCATION_TYPE = "Type: ";
 
 export const EPISODE_NAME = "Episode name: ";
-export const EPISODE_AIR_DATE="Air date: ";
+export const EPISODE_AIR_DATE = "Air date: ";
 
 export const HOME_ABOUT = "About animated series";
 export const HOME_HIGHLIGHT = "Rick and Morty";

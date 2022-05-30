@@ -30,7 +30,7 @@ const useGetCharactersByFilterName = (name, page) => {
     {
       variables: {
         name,
-        page
+        page,
       },
     }
   );

@@ -30,7 +30,12 @@ const Search = ({ changeSearchText, submitSearchField }) => {
         onChange={changeSearchField}
         value={search}
       />
-      <button data-testid={isValid ? "button" : "button-disabled"} disabled={!isValid}>{SEARCH_TEXT}</button>
+      <button
+        data-testid={isValid ? "button" : "button-disabled"}
+        disabled={!isValid}
+      >
+        {SEARCH_TEXT}
+      </button>
     </form>
   );
 };

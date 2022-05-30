@@ -18,17 +18,29 @@ const MenuList = () => {
         </Link>
       </li>
       <li className={styles.list__item}>
-        <Link to="/characters" data-testid="header-item" className={styles.list__link}>
+        <Link
+          to="/characters"
+          data-testid="header-item"
+          className={styles.list__link}
+        >
           {HEADER_CHARACTERS}
         </Link>
       </li>
       <li className={styles.list__item}>
-        <Link to="/episodes" data-testid="header-item" className={styles.list__link}>
+        <Link
+          to="/episodes"
+          data-testid="header-item"
+          className={styles.list__link}
+        >
           {HEADER_EPISODES}
         </Link>
       </li>
       <li className={styles.list__item}>
-        <Link to="/locations" data-testid="header-item" className={styles.list__link}>
+        <Link
+          to="/locations"
+          data-testid="header-item"
+          className={styles.list__link}
+        >
           {HEADER_LOCATIONS}
         </Link>
       </li>
