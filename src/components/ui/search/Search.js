@@ -7,6 +7,7 @@ import searchSchema from "./../../../validations/search/SeacrhValidation";
 
 const Search = ({ changeSearchText, submitSearchField }) => {
   const [isValid, setIsValid] = useState(false);
+  const [search, setSearch] = useState(null);
 
   const changeSearchField = async (event) => {
     const { value } = event.target;
@@ -14,6 +15,7 @@ const Search = ({ changeSearchText, submitSearchField }) => {
       search: value,
     };
     const isValid = await searchSchema.isValid(formData);
+    setSearch(value);
     setIsValid(isValid);
     changeSearchText(value);
   };
@@ -21,12 +23,14 @@ const Search = ({ changeSearchText, submitSearchField }) => {
   return (
     <form className={styles.search} onSubmit={submitSearchField}>
       <input
+        data-testid="search-input"
         type="search"
         name="search"
         placeholder="Search..."
         onChange={changeSearchField}
+        value={search}
       />
-      <button disabled={!isValid}>{SEARCH_TEXT}</button>
+      <button data-testid={isValid ? "button" : "button-disabled"} disabled={!isValid}>{SEARCH_TEXT}</button>
     </form>
   );
 };

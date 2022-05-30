@@ -11,24 +11,24 @@ import styles from "./styles/menu-list.module.scss";
 
 const MenuList = () => {
   return (
-    <ul className={styles.list}>
+    <ul data-testid="header-list" className={styles.list}>
       <li className={styles.list__item}>
-        <Link to="/" className={styles.list__link}>
+        <Link to="/" data-testid="header-item" className={styles.list__link}>
           {HEADER_HOME}
         </Link>
       </li>
       <li className={styles.list__item}>
-        <Link to="/characters" className={styles.list__link}>
+        <Link to="/characters" data-testid="header-item" className={styles.list__link}>
           {HEADER_CHARACTERS}
         </Link>
       </li>
       <li className={styles.list__item}>
-        <Link to="/episodes" className={styles.list__link}>
+        <Link to="/episodes" data-testid="header-item" className={styles.list__link}>
           {HEADER_EPISODES}
         </Link>
       </li>
       <li className={styles.list__item}>
-        <Link to="/locations" className={styles.list__link}>
+        <Link to="/locations" data-testid="header-item" className={styles.list__link}>
           {HEADER_LOCATIONS}
         </Link>
       </li>
