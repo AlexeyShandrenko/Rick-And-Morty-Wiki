@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 
 import styles from "./styles/search.module.scss";
@@ -38,6 +39,11 @@ const Search = ({ changeSearchText, submitSearchField }) => {
       </button>
     </form>
   );
+};
+
+Search.propTypes = {
+  changeSearchText: PropTypes.func.isRequired,
+  submitSearchField: PropTypes.func.isRequired,
 };
 
 export default Search;

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import styles from "./styles/picker.module.scss";
 
 import { SEARCH_TITLE } from "../../../config/constants/constants";
@@ -27,6 +29,12 @@ const Picker = ({ count, name, select }) => {
       </select>
     </div>
   );
+};
+
+Picker.propTypes = {
+  count: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  select: PropTypes.func.isRequired,
 };
 
 export default Picker;

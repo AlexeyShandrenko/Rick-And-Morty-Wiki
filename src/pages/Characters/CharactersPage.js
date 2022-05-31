@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import Characters from "../../components/Characters/Characters";
 import Loading from "../../components/ui/loading/Loading";
 import Wallpaper from "../../components/ui/wallpaper/Wallpaper";
@@ -25,6 +27,10 @@ const CharactersPage = ({ title }) => {
       </main>
     </>
   );
+};
+
+CharactersPage.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default CharactersPage;

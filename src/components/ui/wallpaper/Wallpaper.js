@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import styles from "./styles/wallpaper.module.scss";
 
 const Wallpaper = ({ title }) => {
@@ -11,6 +13,10 @@ const Wallpaper = ({ title }) => {
       <p className={styles.wallpaper__text}>{title}</p>
     </div>
   );
+};
+
+Wallpaper.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default Wallpaper;

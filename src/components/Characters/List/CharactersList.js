@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import CharacterCard from "./Item/CharacterCard";
 
 import styles from "./styles/characters-list.module.scss";
@@ -21,6 +23,21 @@ const CharactersList = ({ data }) => {
       })}
     </ul>
   );
+};
+
+CharactersList.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string,
+      id: PropTypes.string,
+      name: PropTypes.string,
+      image: PropTypes.string,
+      species: PropTypes.string,
+      status: PropTypes.string,
+      locationName: PropTypes.string,
+      originName: PropTypes.string,
+    })
+  ),
 };
 
 export default CharactersList;

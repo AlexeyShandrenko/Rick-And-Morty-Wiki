@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 import styles from "./styles/characters.module.scss";
 
@@ -9,7 +10,6 @@ import CharactersList from "./List/CharactersList";
 import Loading from "../ui/loading/Loading";
 import Button from "../ui/button/Button";
 import Search from "../ui/search/Search";
-import Filter from "../ui/filter/Filter";
 
 const Characters = ({
   charactersData,
@@ -18,7 +18,8 @@ const Characters = ({
   next,
 }) => {
   const pages = pagesCount + 1;
-  const { results: defaultResults = [] } = charactersData?.characters;
+  const { results: defaultResults = [] } =
+    charactersData?.characters ?? undefined;
   const [results, setResults] = useState(defaultResults);
   const [pageNumber, setPageNumber] = useState(next);
   const [searchText, setSearchText] = useState("");
@@ -83,7 +84,6 @@ const Characters = ({
         changeSearchText={changeSearchText}
         submitSearchField={submitSearchField}
       />
-      {/* <Filter /> */}
       {searchResults ? (
         <div>
           <CharactersList data={searchResults} />
@@ -102,6 +102,35 @@ const Characters = ({
       )}
     </section>
   );
+};
+
+Characters.propTypes = {
+  charactersData: PropTypes.shape({
+    characters: PropTypes.shape({
+      info: PropTypes.shape({
+        next: PropTypes.number,
+        pages: PropTypes.number,
+      }),
+      results: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string,
+          image: PropTypes.string,
+          location: PropTypes.shape({
+            name: PropTypes.string,
+          }),
+          origin: PropTypes.shape({
+            name: PropTypes.string,
+          }),
+          name: PropTypes.string,
+          species: PropTypes.string,
+          status: PropTypes.string,
+        })
+      ),
+    }),
+  }),
+  next: PropTypes.number,
+  pagesCount: PropTypes.number,
+  charactersLoading: PropTypes.bool,
 };
 
 export default Characters;

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import styles from "./styles/header-menu.module.scss";
 
 import { AiOutlineMenu } from "react-icons/ai";
@@ -25,6 +27,11 @@ const HeaderMenuBurger = ({ clickBurger, open }) => {
   return (
     <nav className={styles.menuBurger}>{open ? closeIcon : burgerIcon}</nav>
   );
+};
+
+HeaderMenuBurger.propTypes = {
+  clickBurger: PropTypes.func.isRequired,
+  open: PropTypes.func.isRequired,
 };
 
 export default HeaderMenuBurger;

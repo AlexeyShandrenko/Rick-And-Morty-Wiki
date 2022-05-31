@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import useGetEpisodesCount from "../../hooks/episodes/useGetEpisodesCount";
 
 import Episodes from "../../components/Episodes/Episodes";
@@ -17,6 +19,10 @@ const EpisodesPage = ({ title }) => {
       </main>
     </>
   );
+};
+
+EpisodesPage.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default EpisodesPage;

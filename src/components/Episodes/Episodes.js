@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { useEffect, useState } from "react";
 
 import styles from "./styles/episodes.module.scss";
@@ -40,6 +42,10 @@ const Episodes = ({ count }) => {
       {data && <CharactersList data={data.episode.characters} />}
     </section>
   );
+};
+
+Episodes.propTypes = {
+  count: PropTypes.number.isRequired,
 };
 
 export default Episodes;

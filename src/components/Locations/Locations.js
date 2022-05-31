@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { useEffect, useState } from "react";
 
 import styles from "./styles/location.module.scss";
@@ -51,6 +53,10 @@ const Locations = ({ count }) => {
       )}
     </section>
   );
+};
+
+Locations.propTypes = {
+  count: PropTypes.number.isRequired,
 };
 
 export default Locations;

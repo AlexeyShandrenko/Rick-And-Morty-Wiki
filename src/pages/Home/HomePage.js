@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import Home from "../../components/Home/Home";
 import Wallpaper from "../../components/ui/wallpaper/Wallpaper";
 
@@ -12,6 +14,10 @@ const HomePage = ({ title }) => {
       </main>
     </>
   );
+};
+
+HomePage.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default HomePage;

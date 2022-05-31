@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import styles from "./styles/character-info.module.scss";
 
@@ -55,6 +56,29 @@ const CharacterInformation = ({ character }) => {
       </ul>
     </div>
   );
+};
+
+CharacterInformation.propTypes = {
+  character: PropTypes.shape({
+    episode: PropTypes.arrayOf(
+      PropTypes.shape({
+        episode: PropTypes.string,
+        id: PropTypes.string,
+        name: PropTypes.string,
+      })
+    ),
+    location: PropTypes.shape({
+      name: PropTypes.string,
+    }),
+    origin: PropTypes.shape({
+      name: PropTypes.string,
+    }),
+    image: PropTypes.string,
+    status: PropTypes.string,
+    name: PropTypes.string,
+    gender: PropTypes.string,
+    type: PropTypes.string,
+  }),
 };
 
 export default CharacterInformation;

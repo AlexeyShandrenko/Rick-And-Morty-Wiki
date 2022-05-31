@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { Link } from "react-router-dom";
 
 import styles from "./styles/character-card.module.scss";
@@ -48,6 +50,16 @@ const CharacterCard = ({
       </Link>
     </li>
   );
+};
+
+CharacterCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  species: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  locationName: PropTypes.string.isRequired,
+  originName: PropTypes.string.isRequired,
 };
 
 export default CharacterCard;

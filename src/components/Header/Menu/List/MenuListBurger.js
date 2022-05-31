@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { Link } from "react-router-dom";
 
 import {
@@ -56,6 +58,10 @@ const MenuListBurger = ({ closeBurger }) => {
       </ul>
     </nav>
   );
+};
+
+MenuListBurger.propTypes = {
+  closeBurger: PropTypes.func.isRequired,
 };
 
 export default MenuListBurger;

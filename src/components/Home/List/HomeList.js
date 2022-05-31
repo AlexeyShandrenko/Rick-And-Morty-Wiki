@@ -30,8 +30,8 @@ const HomeList = () => {
       </li>
       <li className={styles.item}>
         <span className={styles.item__highlight}>Production:</span> Justin
-        Royland's solo album Vanity, Card Productions, Dan Harmon Productions,
-        Starburns Industries
+        Royland&apos;s solo album Vanity, Card Productions, Dan Harmon
+        Productions, Starburns Industries
       </li>
     </ul>
   );
