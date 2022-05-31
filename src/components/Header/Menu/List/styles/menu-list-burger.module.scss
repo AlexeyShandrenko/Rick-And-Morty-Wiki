@@ -1,0 +1,40 @@
+@import "./../../../../../styles/constants.scss";
+
+.menu {
+  border-top: 2px solid $dark-font;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background-color: $blue-font;
+  margin: 0 0 0 -5px;
+  @media (max-width: 768px) {
+  }
+  @media (max-width: 415px) {
+    margin: 0 0 0 -10px;
+  }
+  display: flex;
+  padding: 80px;
+  z-index: 5;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  .list {
+    display: flex;
+    flex-direction: column;
+    &__item {
+      margin: 0 0 30px 0;
+      &:last-child {
+        margin: 0;
+      }
+    }
+    &__link {
+      color: $dark-font;
+      font-size: 2.28rem;
+      font-weight: 800;
+      transition: $duration;
+      &:hover {
+        color: $white-font;
+      }
+    }
+  }
+}

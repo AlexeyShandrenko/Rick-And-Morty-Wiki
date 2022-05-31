@@ -122,7 +122,12 @@ main {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  .container {
+    max-width: 515px;
+  }
+}
+@media (max-width: 415px) {
   .container {
     max-width: none;
   }

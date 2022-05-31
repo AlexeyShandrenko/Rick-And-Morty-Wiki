@@ -1,0 +1,46 @@
+@import "./../../../../styles/constants.scss";
+
+.menuBurger {
+  display: none;
+  position: relative;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+  .close {
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+  }
+  .burger {
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+  }
+}
+
+.menuBurger ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  z-index: 5;
+  top: 28px;
+  right: 0;
+  border-top: 5px solid $dark-font;
+  background-color: $blue-font;
+  padding: 10px 0;
+}
+
+.menuBurger ul li {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.menu {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

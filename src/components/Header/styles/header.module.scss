@@ -2,7 +2,7 @@
 
 .header {
   position: absolute;
-  z-index: 2;
+  z-index: 5;
   min-width: 100%;
   padding: 20px;
   background-color: $opacity-background;
@@ -13,12 +13,13 @@
     padding: 10px;
   }
   @media (max-width: 768px) {
-    // padding: 5px;
+    padding: 5px;
   }
   @media (max-width: 415px) {
-    // padding: 20px 0;
+    padding: 10px;
   }
   &__content {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -3,10 +3,22 @@
 .wallpaper {
   position: relative;
   padding-top: 41.8%;
+  @media (max-width: 1200px) {
+    padding-top: 47%;
+  }
+  @media (max-width: 992px) {
+    padding-top: 52%;
+  }
+  @media (max-width: 768px) {
+    padding-top: 57%;
+  }
+  @media (max-width: 415px) {
+    padding-top: 67%;
+  }
   background-color: $gray-background;
   &__text {
     position: absolute;
-    z-index: 5;
+    z-index: 2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -22,10 +34,10 @@
       font-size: 5.14rem;
     }
     @media (max-width: 768px) {
-      font-size: 3.14rem;
+      font-size: 3.2rem;
     }
     @media (max-width: 415px) {
-      font-size: 2.14rem;
+      font-size: 1.9rem;
     }
   }
   &__image {
@@ -33,7 +45,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     opacity: 0.6;
   }
 }
