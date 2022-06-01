@@ -30,11 +30,6 @@
     "prettier": "prettier src -check",
     "format": "prettier --write ."
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn format && git add ."
-    }
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
