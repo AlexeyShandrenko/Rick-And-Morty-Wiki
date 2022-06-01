@@ -324,7 +324,7 @@ describe("Episodes component", () => {
         <Episodes />
       </MockedProvider>
     );
-    const episodeName = await findByText("Lawnmower Dog");
+    // const episodeName = await findByText("Lawnmower Dog");
     const airDate = await findByText("December 9, 2013");
     expect(episodeName).toBeInTheDocument();
 
