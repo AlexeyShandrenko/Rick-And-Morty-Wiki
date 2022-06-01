@@ -5,7 +5,7 @@ import styles from "./styles/character-info.module.scss";
 
 const CharacterInformation = ({ character }) => {
   const getEpisodes = () => {
-    const { episode } = character;
+    const { episode } = character || [];
     let result = "";
     episode.map((ep) => {
       result += `${ep.name} (${ep.episode}), `;
@@ -16,38 +16,38 @@ const CharacterInformation = ({ character }) => {
   return (
     <div className="character__information">
       <div className={styles.character__img}>
-        <img src={character.image} alt="" />
+        <img src={character ? character.image : ""} alt="" />
         <p
           className={
-            character.status === "Alive"
+            character && character.status === "Alive"
               ? `${styles.character__status_alive}`
-              : character.status === "Dead"
+              : character && character.status === "Dead"
               ? `${styles.character__status_dead}`
               : `${styles.character__status_unknown}`
           }
         >
-          {character.status}
+          {character && character.status}
         </p>
       </div>
-      <p className={styles.character__name}>{character.name}</p>
+      <p className={styles.character__name}>{character && character.name}</p>
       <ul className={styles.list}>
         <li className={styles.list__item}>
           <span className="list__highlight">Gender: </span>
-          {character.gender}
+          {character && character.gender}
         </li>
-        {character.type && (
+        {character && character.type && (
           <li className={styles.list__item}>
             <span>Type: </span>
-            {character.type}
+            {character && character.type}
           </li>
         )}
         <li className={styles.list__item}>
           <span>First seen in: </span>
-          <Link to="/locations">{character.origin.name}</Link>
+          <Link to="/locations">{character && character.origin.name}</Link>
         </li>
         <li className={styles.list__item}>
           <span>Last known location: </span>
-          <Link to="/locations">{character.location.name}</Link>
+          <Link to="/locations">{character && character.location.name}</Link>
         </li>
         <li className={styles.list__item}>
           <span>Episodes: </span>
