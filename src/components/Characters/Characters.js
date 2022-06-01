@@ -16,6 +16,7 @@ const Characters = ({
   charactersLoading,
   pagesCount,
   next,
+  fake,
 }) => {
   const pages = pagesCount + 1;
   const { results: defaultResults = [] } =
@@ -104,33 +105,33 @@ const Characters = ({
   );
 };
 
-// Characters.propTypes = {
-//   charactersData: PropTypes.shape({
-//     characters: PropTypes.shape({
-//       info: PropTypes.shape({
-//         next: PropTypes.number,
-//         pages: PropTypes.number,
-//       }),
-//       results: PropTypes.arrayOf(
-//         PropTypes.shape({
-//           id: PropTypes.string,
-//           image: PropTypes.string,
-//           location: PropTypes.shape({
-//             name: PropTypes.string,
-//           }),
-//           origin: PropTypes.shape({
-//             name: PropTypes.string,
-//           }),
-//           name: PropTypes.string,
-//           species: PropTypes.string,
-//           status: PropTypes.string,
-//         })
-//       ),
-//     }),
-//   }),
-//   next: PropTypes.number,
-//   pagesCount: PropTypes.number,
-//   charactersLoading: PropTypes.bool,
-// };
+Characters.propTypes = {
+  charactersData: PropTypes.shape({
+    characters: PropTypes.shape({
+      info: PropTypes.shape({
+        next: PropTypes.number,
+        pages: PropTypes.number,
+      }),
+      results: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string,
+          image: PropTypes.string,
+          location: PropTypes.shape({
+            name: PropTypes.string,
+          }),
+          origin: PropTypes.shape({
+            name: PropTypes.string,
+          }),
+          name: PropTypes.string,
+          species: PropTypes.string,
+          status: PropTypes.string,
+        })
+      ),
+    }),
+  }),
+  next: PropTypes.number,
+  pagesCount: PropTypes.number,
+  charactersLoading: PropTypes.bool,
+};
 
 export default Characters;
