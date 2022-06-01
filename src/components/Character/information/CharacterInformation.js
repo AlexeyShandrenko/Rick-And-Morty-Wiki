@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import styles from "./styles/character-info.module.scss";
 
-const CharacterInformation = ({ character }) => {
+const CharacterInformation = ({ character, hh }) => {
   const getEpisodes = () => {
     const { episode } = character || [];
     let result = "";
