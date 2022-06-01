@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 14.x
       - name: yarn
-        run: yarn
+        run: yarn install
       - name: yarn scan
         run: yarn scan
       - name: lint
