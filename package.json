@@ -25,7 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "eslint": "node_modules/.bin/eslint src/",
+    "scan": "node_modules/.bin/eslint src/",
     "lint": "prettier --check .",
     "prettier": "prettier src -check",
     "format": "prettier --write ."
@@ -35,6 +35,11 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format && git add ."
+    }
   },
   "browserslist": {
     "production": [
