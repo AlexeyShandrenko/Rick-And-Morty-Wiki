@@ -16,7 +16,6 @@ const Characters = ({
   charactersLoading,
   pagesCount,
   next,
-  fake,
 }) => {
   const pages = pagesCount + 1;
   const { results: defaultResults = [] } =

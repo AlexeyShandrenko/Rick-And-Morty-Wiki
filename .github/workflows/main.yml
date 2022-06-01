@@ -24,3 +24,5 @@ jobs:
         run: yarn scan
       - name: lint
         run: yarn lint
+      - name: test
+        run: yarn test

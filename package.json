@@ -30,12 +30,6 @@
     "prettier": "prettier src -check",
     "format": "prettier --write ."
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn format && git add ."
@@ -56,6 +50,7 @@
   "devDependencies": {
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-react": "^7.30.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.0",
