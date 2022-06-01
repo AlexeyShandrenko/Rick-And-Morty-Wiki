@@ -20,3 +20,7 @@ jobs:
           node-version: 14.x
       - name: yarn ci
         run: yarn ci
+      - name: yarn scan
+        run: yarn scan
+      - name: lint
+        run: yarn lint
