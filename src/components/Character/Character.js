@@ -16,7 +16,7 @@ const Character = () => {
       {loading ? (
         <Loading />
       ) : (
-        <CharacterInformation character={data.character} />
+        <CharacterInformation character={data && data.character} />
       )}
     </section>
   );

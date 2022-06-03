@@ -11,11 +11,16 @@ import HomeList from "./List/HomeList";
 const Home = () => {
   return (
     <section className={styles.home}>
-      <h1 className={styles.home__title}>{HOME_ABOUT}</h1>
+      <h1 data-testid="home-about" className={styles.home__title}>
+        {HOME_ABOUT}
+      </h1>
       <div className={styles.content}>
         <div className={styles.content__info}>
-          <p className={styles.description}>
-            <span className={styles.description__highlight}>
+          <p data-testid="home-description" className={styles.description}>
+            <span
+              data-testid="home-highlight"
+              className={styles.description__highlight}
+            >
               {HOME_HIGHLIGHT}
             </span>{" "}
             {HOME_DESCRIPTION}

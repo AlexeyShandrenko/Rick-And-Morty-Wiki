@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import styles from "./styles/character-info.module.scss";
 
-const CharacterInformation = ({ character, hh }) => {
+const CharacterInformation = ({ character }) => {
   const getEpisodes = () => {
     const { episode } = character || [];
     let result = "";
@@ -29,7 +29,9 @@ const CharacterInformation = ({ character, hh }) => {
           {character && character.status}
         </p>
       </div>
-      <p className={styles.character__name}>{character && character.name}</p>
+      <p data-testid="name" className={styles.character__name}>
+        {character && character.name}
+      </p>
       <ul className={styles.list}>
         <li className={styles.list__item}>
           <span className="list__highlight">Gender: </span>

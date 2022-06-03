@@ -3,7 +3,7 @@ import styles from "./styles/home-list.module.scss";
 const HomeList = () => {
   return (
     <ul className={styles.list}>
-      <li className={styles.item}>
+      <li data-testid="genre" className={styles.item}>
         <span className={styles.item__highlight}>Genre:</span> Comedy, Science
         Fiction, Adventure
       </li>
@@ -17,11 +17,11 @@ const HomeList = () => {
         <span className={styles.item__highlight}>Duration of the series:</span>{" "}
         22 min
       </li>
-      <li className={styles.item}>
+      <li data-testid="authors" className={styles.item}>
         <span className={styles.item__highlight}>Authors:</span> Dan Harmon,
         Justin Roiland
       </li>
-      <li className={styles.item}>
+      <li data-testid="directors" className={styles.item}>
         <span className={styles.item__highlight}>Directors:</span> Jeff Myers,
         Brian Newton, John Rice, Justin Royland
       </li>

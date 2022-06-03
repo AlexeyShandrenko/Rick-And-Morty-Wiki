@@ -1,8 +1,17 @@
-import { cleanup, render } from "@testing-library/react";
-import { gql } from "@apollo/client";
 import { MockedProvider } from "@apollo/client/testing";
-import "@testing-library/jest-dom";
 import CharacterInformation from "./../../components/Character/information/CharacterInformation";
+import { gql } from "@apollo/client";
+import {
+  render,
+  cleanup,
+  screen,
+  act,
+  waitFor,
+  getByText,
+  getByTestId,
+} from "@testing-library/react";
+import "@testing-library/jest-dom";
+import { wait } from "@testing-library/user-event/dist/utils";
 
 const GET_CHARACTER_BY_ID = gql`
   query getCharacterById($id: ID!) {
@@ -317,17 +326,18 @@ const mocks = [
   },
 ];
 
-describe("character component", () => {
-  afterEach(cleanup);
-  it("displays character data", async () => {
-    const { findByText } = render(
-      <MockedProvider mocks={mocks}>
+afterEach(cleanup);
+it("displays character data", async () => {
+  await act(async () => {
+    const { getByTestId } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
         <CharacterInformation />
       </MockedProvider>
     );
-    const image = await findByText(
-      "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-    );
-    expect(image).toBeInTheDocument();
+  });
+  expect(screen.queryByText(/Rick Sanchez/)).toBeNull();
+
+  await waitFor(() => {
+    expect(getByTestId("name")).toBeInTheDocument();
   });
 });
