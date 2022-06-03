@@ -22,7 +22,5 @@ jobs:
         run: yarn install
       - name: lint
         run: yarn lint
-      - name: yarn scan
-        run: yarn scan
       - name: test
         run: yarn test
