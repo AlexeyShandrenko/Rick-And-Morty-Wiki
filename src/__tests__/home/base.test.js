@@ -5,7 +5,7 @@ import {
   HOME_HIGHLIGHT,
   HOME_DESCRIPTION,
 } from "../../config/constants/constants";
-import Home from "./../../components/Home/Home";
+import Home from "../../components/Home/Home";
 
 describe("home page", () => {
   it("renders constants", () => {

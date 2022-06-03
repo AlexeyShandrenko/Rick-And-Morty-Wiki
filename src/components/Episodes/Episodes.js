@@ -30,11 +30,11 @@ const Episodes = ({ count }) => {
 
   return (
     <section className={styles.episodes}>
-      <h1 className={styles.episodes__title}>
+      <h1 data-testid="episode-name" className={styles.episodes__title}>
         <span>{EPISODE_NAME}</span>
         {data && data.episode.name}
       </h1>
-      <h2 className={styles.episodes__subtitle}>
+      <h2 data-testid="episode-date" className={styles.episodes__subtitle}>
         <span>{EPISODE_AIR_DATE}</span>
         {data && data.episode.air_date}
       </h2>
