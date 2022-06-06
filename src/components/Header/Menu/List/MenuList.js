@@ -13,13 +13,17 @@ const MenuList = () => {
   return (
     <ul data-testid="header-list" className={styles.list}>
       <li className={styles.list__item}>
-        <Link to="/" data-testid="header-item" className={styles.list__link}>
+        <Link
+          to="/rick-and-morty-wiki"
+          data-testid="header-item"
+          className={styles.list__link}
+        >
           {HEADER_HOME}
         </Link>
       </li>
       <li className={styles.list__item}>
         <Link
-          to="/characters"
+          to="/rick-and-morty-wiki/characters"
           data-testid="header-item"
           className={styles.list__link}
         >
@@ -28,7 +32,7 @@ const MenuList = () => {
       </li>
       <li className={styles.list__item}>
         <Link
-          to="/episodes"
+          to="/rick-and-morty-wiki/episodes"
           data-testid="header-item"
           className={styles.list__link}
         >
@@ -37,7 +41,7 @@ const MenuList = () => {
       </li>
       <li className={styles.list__item}>
         <Link
-          to="/locations"
+          to="/rick-and-morty-wiki/locations"
           data-testid="header-item"
           className={styles.list__link}
         >

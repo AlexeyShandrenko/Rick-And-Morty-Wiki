@@ -15,7 +15,7 @@ const CharacterCard = ({
 }) => {
   return (
     <li className={styles.card}>
-      <Link to={`/${id}`} className="card__link">
+      <Link to={`/rick-and-morty-wiki/character/${id}`} className="card__link">
         <div className={styles.card__img}>
           <img className={styles.img} alt="" src={image} />
           <p

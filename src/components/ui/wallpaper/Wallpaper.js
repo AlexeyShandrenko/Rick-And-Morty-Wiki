@@ -7,7 +7,7 @@ const Wallpaper = ({ title }) => {
     <div className={styles.wallpaper}>
       <img
         className={styles.wallpaper__image}
-        src="./images/wallpaper.jpg"
+        src={window.location.origin + "/images/wallpaper.jpg"}
         alt=""
       />
       <p className={styles.wallpaper__text}>{title}</p>
@@ -17,6 +17,7 @@ const Wallpaper = ({ title }) => {
 
 Wallpaper.propTypes = {
   title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default Wallpaper;

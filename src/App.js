@@ -19,22 +19,22 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/rick-and-morty-wiki" element={<Layout />}>
           <Route index element={<HomePage title={HOME_PAGE_TITLE} />} />
           <Route
-            path="/characters"
+            path="/rick-and-morty-wiki/characters"
             element={<CharactersPage title={CHARACTERS_PAGE_TITLE} />}
           />
           <Route
-            path="/locations"
+            path="/rick-and-morty-wiki/locations"
             element={<LocationsPage title={LOCATIONS_PAGE_TITLE} />}
           />
           <Route
-            path="/episodes"
+            path="/rick-and-morty-wiki/episodes"
             element={<EpisodesPage title={EPISODES_PAGE_TITLE} />}
           />
           <Route
-            path="/:id"
+            path="/rick-and-morty-wiki/character/:id"
             element={<CharacterPage title={CHARACTER_PAGE_TITLE} />}
           />
         </Route>
