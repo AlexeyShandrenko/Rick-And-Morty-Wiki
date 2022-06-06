@@ -3,10 +3,6 @@ import { render, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { gql } from "@apollo/client";
 import Episodes from "../../components/Episodes/Episodes";
-import {
-  EPISODE_NAME,
-  EPISODE_AIR_DATE,
-} from "../../config/constants/constants";
 
 const GET_EPISODE_BY_ID = gql`
   query ($id: ID!) {
@@ -316,12 +312,16 @@ const mocks = [
 afterAll(cleanup);
 
 it("renders episodes component", async () => {
-  const { findByText, getByText } = render(
+  const { findByTestId } = render(
     <MockedProvider mocks={mocks} addTypename={false}>
       <Episodes count={51} />
     </MockedProvider>
   );
-  expect(getByText(EPISODE_NAME)).toBeInTheDocument();
-  const episodeName = await findByText("Pilot");
+  const episodeName = await findByTestId("episode-name");
+  const episodeDate = await findByTestId("episode-date");
+
   expect(episodeName).toBeInTheDocument();
+  expect(episodeName).toHaveTextContent("Episode name:");
+  expect(episodeDate).toBeInTheDocument();
+  expect(episodeDate).toHaveTextContent("Air date:");
 });

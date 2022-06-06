@@ -45,15 +45,19 @@ const CharacterInformation = ({ character }) => {
         )}
         <li className={styles.list__item}>
           <span>First seen in: </span>
-          <Link to="/locations">{character && character.origin.name}</Link>
+          <Link to="/rick-and-morty-wiki/locations">
+            {character && character.origin.name}
+          </Link>
         </li>
         <li className={styles.list__item}>
           <span>Last known location: </span>
-          <Link to="/locations">{character && character.location.name}</Link>
+          <Link to="/rick-and-morty-wiki/locations">
+            {character && character.location.name}
+          </Link>
         </li>
         <li className={styles.list__item}>
           <span>Episodes: </span>
-          <Link to="/episodes">{getEpisodes()}</Link>
+          <Link to="/rick-and-morty-wiki/episodes">{getEpisodes()}</Link>
         </li>
       </ul>
     </div>
