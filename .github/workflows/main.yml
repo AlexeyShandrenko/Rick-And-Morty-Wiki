@@ -3,12 +3,12 @@ name: React App CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [main]
+    branches: [source]
   pull_request:
-    branches: [main]
+    branches: [source]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  react-app-workflow:
+  build-test-deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -26,5 +26,11 @@ jobs:
         run: yarn scan
       - name: test
         run: yarn test
+      - name: build
+        run: yarn build
       - name: deploy
-        run: yarn deploy
+        uses: alexeyshandrenko/ghaction-github-pages@v1
+        with:
+          target_branch: main
+          build_dir: build
+          github_token: ${{ secrets.GITHUB_TOKEN }}
