@@ -8,7 +8,7 @@ const CharacterInformation = ({ character }) => {
     const { episode } = character || [];
     let result = "";
     episode.map((ep) => {
-      result += `${ep.name} (${ep.episode}), `;
+      return (result += `${ep.name} (${ep.episode}), `);
     });
     return result;
   };
