@@ -18,7 +18,7 @@ import EpisodesPage from "./pages/Episodes/EpisodesPage";
 function App() {
   return (
     <div className="App">
-      <Routes basename="/rick-and-morty-wiki">
+      <Routes>
         <Route path="/rick-and-morty-wiki" element={<Layout />}>
           <Route index element={<HomePage title={HOME_PAGE_TITLE} />} />
           <Route
