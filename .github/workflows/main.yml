@@ -3,9 +3,9 @@ name: React App CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [source]
+    branches: [main]
   pull_request:
-    branches: [source]
+    branches: [main]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build-test-deploy:
@@ -33,4 +33,5 @@ jobs:
         with:
           target_branch: main
           build_dir: build
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
