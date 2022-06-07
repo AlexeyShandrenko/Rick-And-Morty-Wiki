@@ -33,4 +33,5 @@ jobs:
         with:
           target_branch: main
           build_dir: build
+        env:
           token: ${{ secrets.GITHUB_TOKEN }}
