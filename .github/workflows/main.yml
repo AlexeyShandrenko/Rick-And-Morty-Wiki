@@ -1,37 +1,48 @@
-name: React App CI
-# Controls when the action will run.
+name: CI/CD
+
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [source]
   pull_request:
     branches: [source]
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+
 jobs:
-  build-test-deploy:
-    # The type of runner that the job will run on
+  build:
     runs-on: ubuntu-latest
-    # Steps represent a sequence of tasks that will be executed as part of the job
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          node-version: 14.x
-      - name: yarn
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
         run: yarn install
-      - name: lint
-        run: yarn lint
-      - name: yarn scan
+
+      - name: Eslint
         run: yarn scan
-      - name: test
+
+      - name: Run the tests and generate coverage report
         run: yarn test
-      - name: build
+
+      - name: Build
         run: yarn build
-      - name: deploy
-        uses: crazy-max/ghaction-github-pages@v1
-        with:
-          target_branch: main
-          build_dir: build
+
+      - name: Deploy
+        run: |
+          git config --global user.name $user_name
+          git config --global user.email $user_email
+          git remote set-url origin https://${github_token}@github.com/${repository}
+          npm run deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
