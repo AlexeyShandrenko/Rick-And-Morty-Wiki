@@ -19,6 +19,7 @@ const Episodes = ({ count }) => {
 
   useEffect(() => {
     getEpisodeById();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const selectEpisode = (event) => {
