@@ -8,7 +8,7 @@ const Logo = () => {
       <Link to="/rick-and-morty-wiki" className="logo__link">
         <img
           className={styles.logo__img}
-          src={window.location.origin + "/images/icons/logo.png"}
+          src={process.env.PUBLIC_URL + "/images/icons/logo.png"}
           alt=""
         />
       </Link>

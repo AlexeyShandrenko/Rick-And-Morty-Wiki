@@ -7,7 +7,7 @@ const Wallpaper = ({ title }) => {
     <div className={styles.wallpaper}>
       <img
         className={styles.wallpaper__image}
-        src={window.location.origin + "/images/wallpaper.jpg"}
+        src={process.env.PUBLIC_URL + "/images/wallpaper.jpg"}
         alt=""
       />
       <p className={styles.wallpaper__text}>{title}</p>
